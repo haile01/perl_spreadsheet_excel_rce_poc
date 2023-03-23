@@ -5,4 +5,4 @@ COPY ahihi.pl /app/ahihi.pl
 WORKDIR /app
 RUN cpanm Spreadsheet::ParseXLSX
 
-CMD perl ahihi.pl
+CMD ["perl", "ahihi.pl"]
